@@ -1,0 +1,10 @@
+{
+  "projects": [
+    { "id": "1", "name": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 }
+  ],
+
+  "profile": {
+    "name": "typicode"
+  }
+}
