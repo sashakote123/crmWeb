@@ -3,10 +3,12 @@ import { Route, Routes } from 'react-router';
 
 import { ThemeProvider } from '@emotion/react';
 
+import AuthPage from '../pages/authPage/AuthPage';
 import CalendarPage from '../pages/calendarPage/CalendarPage';
 import InvitesPage from '../pages/invitesPage/InvitesPage';
 import ProfilePage from '../pages/profilePage/ProfilePage';
 import ProjectsPage from '../pages/projectsPage/ProjectsPage';
+import RegisterPage from '../pages/registerPage/RegisterPage';
 import StartPage from '../pages/startPage/StartPage';
 import TasksPage from '../pages/tasksPage/TasksPage';
 import UsersPage from '../pages/usersPage/UsersPage';
@@ -29,6 +31,8 @@ function App() {
             <Route path="/calendar" element={<CalendarPage />} />
             <Route path="/users" element={<UsersPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/auth" element={<AuthPage />} />
           </Routes>
         </Layout>
       </ThemeProvider>

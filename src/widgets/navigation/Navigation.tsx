@@ -108,6 +108,7 @@ const Navigation = () => {
             {menuItems.map((item: ILinkItem) => {
               return (
                 <ListItem
+                  key={item.title}
                   sx={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -153,6 +154,7 @@ const Navigation = () => {
           {bottomList.map((item: ILinkItem) => {
             return (
               <ListItem
+                key={item.title}
                 sx={{
                   display: 'flex',
                   justifyContent: 'center',

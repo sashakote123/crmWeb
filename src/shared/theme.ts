@@ -11,12 +11,21 @@ export const lightTheme = createTheme({
       main: '#ff595e',
     },
     background: {
-      default: '#efefef',
+      default: '#fff',
       paper: '#fff',
     },
     text: {
       primary: '#000',
       secondary: '#333',
+    },
+  },
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: ' #f2f4f8',
+        },
+      },
     },
   },
   typography: {
@@ -35,7 +44,7 @@ export const darkTheme = createTheme({
     },
     background: {
       default: '#001233',
-      paper: '#0a1a2f',
+      paper: '#0A111C',
     },
     text: {
       primary: '#fff',
@@ -43,6 +52,13 @@ export const darkTheme = createTheme({
     },
   },
   components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#101c2f',
+        },
+      },
+    },
     MuiPaper: {
       styleOverrides: {
         root: {

@@ -5,11 +5,11 @@ import { Box, Portal, Typography } from '@mui/material';
 
 import type { RootState } from '../../app/store/store';
 import ThemeSwitcher from '../../features/themeSwitcher/ThemeSwitcher';
-import AuthForm from '../../widgets/authForm/AuthForm';
+import RegisterForm from '../../widgets/registerForm/RegisterForm';
 import img1 from './assets/registerImage1.png';
 import img2 from './assets/registerImage2.png';
 
-const AuthPage = () => {
+const RegisterPage = () => {
   const theme = useSelector((state: RootState) => state.theme.theme);
 
   return (
@@ -73,13 +73,13 @@ const AuthPage = () => {
             <ThemeSwitcher />
           </Box>
 
-          <AuthForm />
+          <RegisterForm />
           <Typography sx={{ alignSelf: 'flex-start' }}>
-            <Link to={'/notfound'}>Забыли пароль?</Link>
+            <Link to={'/auth'}>У вас уже есть учетная запись?</Link>
           </Typography>
         </Box>
       </Box>
     </Portal>
   );
 };
-export default AuthPage;
+export default RegisterPage;

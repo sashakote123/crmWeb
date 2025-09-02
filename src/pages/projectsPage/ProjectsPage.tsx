@@ -5,7 +5,7 @@ import { Box, Button, Typography } from '@mui/material';
 const ProjectsPage = () => {
   const [projectsArray, setProjectsArray] = useState([]);
   return (
-    <section>
+    <Box component={'section'} sx={{ height: '100%' }}>
       {!projectsArray.length ? (
         <Box
           sx={{
@@ -36,7 +36,7 @@ const ProjectsPage = () => {
       ) : (
         <>jopa</>
       )}
-    </section>
+    </Box>
   );
 };
 export default ProjectsPage;
