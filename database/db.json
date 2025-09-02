@@ -1,10 +1,25 @@
 {
   "projects": [
-    { "id": "1", "name": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "name": "title1",
+      "description": "desc",
+      "author": "Ivanov I.I.",
+      "guide": "Petrov A.A.",
+      "status": "Разработка"
+    },
+    {
+      "id": "2",
+      "name": "title2",
+      "description": "desc",
+      "author": "Ivanov I.I.",
+      "guide": "Petrov A.A.",
+      "status": "Разработка"
+    }
   ],
 
   "profile": {
-    "name": "typicode"
+    "name": "Александр",
+    "lastname": "Котихин"
   }
 }

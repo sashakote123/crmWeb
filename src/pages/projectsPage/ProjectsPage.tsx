@@ -1,4 +1,42 @@
+import { useState } from 'react';
+
+import { Box, Button, Typography } from '@mui/material';
+
 const ProjectsPage = () => {
-  return <section>projects</section>;
+  const [projectsArray, setProjectsArray] = useState([]);
+  return (
+    <section>
+      {!projectsArray.length ? (
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '94px',
+            height: '100%',
+          }}
+        >
+          <Typography textAlign={'center'} variant="h4">
+            Привет, Vera, у тебя еще нет ни одного проекта
+          </Typography>
+          <Button
+            sx={{
+              width: '314px',
+              height: '60px',
+              borderRadius: '8px',
+              backgroundColor: '#1886e5',
+              textTransform: 'none',
+              fontSize: '32px',
+            }}
+          >
+            + Создать проект
+          </Button>
+        </Box>
+      ) : (
+        <>jopa</>
+      )}
+    </section>
+  );
 };
 export default ProjectsPage;
