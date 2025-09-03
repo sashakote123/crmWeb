@@ -1,9 +1,14 @@
+import { useSelector } from 'react-redux';
+
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 
+import type { RootState } from '../../app/store/store';
 import ThemeSwitcher from '../../features/themeSwitcher/ThemeSwitcher';
 import icon from './assets/icon.svg';
 
 const Header = () => {
+  const user = useSelector((store: RootState) => store.user);
+
   return (
     <AppBar
       position="fixed"
@@ -62,7 +67,7 @@ const Header = () => {
                     fontWeight: '700',
                   }}
                 >
-                  Vera Kora
+                  {user.firstName} {user.lastName}
                 </Typography>
                 <Typography
                   sx={{

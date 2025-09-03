@@ -1,13 +1,17 @@
 import { FormProvider, type SubmitHandler, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
+
+import { useState } from 'react';
 
 import styled from '@emotion/styled';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, Divider, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 
+import { setUser } from '../../app/store/userSlice';
 import TextInput from '../../features/textInput/TextInput';
-import { type FormFields, formSchema } from '../../shared/formSchema/formSchema';
-import type { IFormFields } from './types';
+import { type FormFields, secondFormSchema } from '../../shared/formSchema/secondFormSchema';
 
 const StyledBox = styled(Box)(() => ({
   width: '100%',
@@ -21,17 +25,39 @@ const StyledButton = styled(Button)(() => ({
 }));
 
 const inputsArray = [
-  { title: 'Логин (Email)', name: 'email', placeholder: 'example@mail.com' },
-  { title: 'Пароль', name: 'password', type: 'password' },
+  {
+    title: 'Логин (Email)',
+    name: 'email',
+    placeholder: 'example@mail.com',
+    alert: 'Некорректный логин',
+  },
+  { title: 'Пароль', name: 'password', type: 'password', alert: 'Некорректный пароль' },
 ];
 
 const AuthForm = () => {
   const methods = useForm<FormFields>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(secondFormSchema),
   });
+  const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<FormFields> = (data: FormFields) => {
-    console.log(data);
+  const dispatch = useDispatch();
+
+  const [isError, setIsError] = useState<boolean>(false);
+
+  const onSubmit: SubmitHandler<FormFields> = async (data: FormFields) => {
+    const usersArray = await (await fetch('http://localhost:3000/users')).json();
+    usersArray.map(
+      (item: { email: string; password: string; firstName: string; lastName: string }) => {
+        if (item.email === data.email && item.password === data.password) {
+          dispatch(
+            setUser({ firstName: item.firstName, lastName: item.lastName, email: item.email })
+          );
+          navigate('/start');
+          return true;
+        }
+        setIsError(true);
+      }
+    );
   };
 
   return (
@@ -48,6 +74,9 @@ const AuthForm = () => {
       >
         Авторизация
       </Typography>
+      {isError && (
+        <Typography sx={{ color: '#f34c41', mt: 2 }}>Неверный Email или пароль</Typography>
+      )}
       <Divider sx={{ marginBottom: '48px' }} />
       <FormProvider {...methods}>
         <Box component="form" onSubmit={methods.handleSubmit(onSubmit)}>
@@ -60,6 +89,7 @@ const AuthForm = () => {
                   name={item.name}
                   type={item.type}
                   placeholder={item.placeholder}
+                  alert={item.alert}
                 />
               );
             })}

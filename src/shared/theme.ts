@@ -27,6 +27,16 @@ export const lightTheme = createTheme({
         },
       },
     },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          color: '#001233',
+          '&.Mui-checked': {
+            color: '#001233',
+          },
+        },
+      },
+    },
   },
   typography: {
     fontFamily: '"Open Sans", sans-serif',

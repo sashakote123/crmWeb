@@ -1,23 +1,149 @@
 {
   "projects": [
     {
-      "id": "1",
-      "name": "title1",
-      "description": "desc",
-      "author": "Ivanov I.I.",
-      "guide": "Petrov A.A.",
-      "status": "Разработка"
+      "name": "Разработать логотипы!!!",
+      "desc": "Разрабатываем логотипы",
+      "status": "",
+      "invitedMembers": "sasha@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "f6b5"
     },
     {
-      "id": "2",
-      "name": "title2",
-      "description": "desc",
-      "author": "Ivanov I.I.",
-      "guide": "Petrov A.A.",
-      "status": "Разработка"
+      "name": "Написать ТЗ!!!!",
+      "desc": "Техническое задание для нового проекта",
+      "status": "",
+      "invitedMembers": "project@mail.com, manager@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "a8c2"
+    },
+    {
+      "id": "d4e1",
+      "name": "Сверстать главную страницу",
+      "desc": "Адаптивная верстка по макету",
+      "status": 0,
+      "invitedMembers": "frontend@mail.com",
+      "author": "artem@example.com"
+    },
+    {
+      "id": "b3f7",
+      "name": "Тестирование бета-версии",
+      "desc": "Провести полное тестирование функционала",
+      "status": 3,
+      "invitedMembers": "qa@mail.com, tester@mail.com",
+      "author": "lead@company.ru"
+    },
+    {
+      "id": "e9g6",
+      "name": "Деплой на продакшен",
+      "desc": "Выкатить новую версию на рабочие серверы",
+      "status": 2,
+      "invitedMembers": "devops@mail.com",
+      "author": "cto@company.ru"
+    },
+    {
+      "id": "j5h8",
+      "name": "Подготовить коммерческое предложение",
+      "desc": "Для нового клиента по проекту X",
+      "status": 0,
+      "invitedMembers": "sales@mail.com",
+      "author": "sapool@bk.ru"
+    },
+    {
+      "id": "p3k9",
+      "name": "Интегрировать платежную систему",
+      "desc": "Подключить Stripe API к сайту",
+      "status": 1,
+      "invitedMembers": "backend@mail.com",
+      "author": "lead@company.ru"
+    },
+    {
+      "id": "r7m2",
+      "name": "Написать контент для блога",
+      "desc": "Статья о трендах веб-разработки",
+      "status": 2,
+      "invitedMembers": "copywriter@mail.com",
+      "author": "content@mail.ru"
+    },
+    {
+      "id": "t4s6",
+      "name": "Выбрать хостинг для проекта",
+      "desc": "Сравнить тарифы и выбрать лучший вариант",
+      "status": 0,
+      "invitedMembers": "sysadmin@mail.com",
+      "author": "cto@company.ru"
+    },
+    {
+      "id": "u1v5",
+      "name": "Создать базу данных",
+      "desc": "Спроектировать и развернуть схему БД",
+      "status": 1,
+      "invitedMembers": "dba@mail.com",
+      "author": "artem@example.com"
+    },
+    {
+      "id": "w8x0",
+      "name": "Провести онбординг нового сотрудника",
+      "desc": "Показать рабочие процессы и выдать доступы",
+      "status": 2,
+      "invitedMembers": "hr@mail.com, teamlead@mail.com",
+      "author": "sapool@bk.ru"
+    },
+    {
+      "id": "y2z4",
+      "name": "Настроить CI/CD",
+      "desc": "Настроить автоматическое тестирование и деплой",
+      "status": 0,
+      "invitedMembers": "devops@mail.com",
+      "author": "cto@company.ru"
+    },
+    {
+      "id": "c6b9",
+      "name": "Закупить лицензии на ПО",
+      "desc": "Оформить заявку на покупку софта",
+      "status": 1,
+      "invitedMembers": "accountant@mail.com",
+      "author": "lead@company.ru"
+    },
+    {
+      "id": "q0d7",
+      "name": "Подготовить презентацию для инвесторов",
+      "desc": "Слайды с финансовыми показателями и планами",
+      "status": 2,
+      "invitedMembers": "ceo@company.com, analyst@mail.com",
+      "author": "sapool@bk.ru"
+    },
+    {
+      "id": "l3n1",
+      "name": "Рефакторинг старого кода",
+      "desc": "Улучшение читаемости и производительности",
+      "status": 0,
+      "invitedMembers": "senior@dev.com",
+      "author": "techlead@mail.ru"
     }
   ],
-
+  "users": [
+    {
+      "firstName": "Александр",
+      "lastName": "Котихин",
+      "email": "sapool@bk.ru",
+      "password": "123123",
+      "id": "cabe"
+    },
+    {
+      "id": "28a2",
+      "lastName": "Андреевич",
+      "firstName": "Котихин",
+      "email": "aleksandar.kotihin@ya.ru",
+      "password": "123123123"
+    },
+    {
+      "id": "04f5",
+      "lastName": "Андреевичujhjgfhgf",
+      "firstName": "Котихин",
+      "email": "sapoool@bk.ru",
+      "password": "111111"
+    }
+  ],
   "profile": {
     "name": "Александр",
     "lastname": "Котихин"
