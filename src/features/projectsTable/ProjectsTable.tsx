@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 import { useState } from 'react';
 
 import {
@@ -15,10 +17,10 @@ import DeleteAlert from '../../entities/deleteAlert/DeleteAlert';
 import EditProjectForm from '../../entities/editProjectForm/EditProjectForm';
 import NoProjects from '../../entities/noProjects/NoProjects';
 import StatusBlock from '../../entities/statusBlock/StatusBlock';
+import type { IProjectItem } from '../../shared/types';
 import pencil from './assets/pencil.svg';
 import trash from './assets/trash.svg';
 import useGetProjects from './hooks/useGetProjects';
-import type { IProjectItem } from './types';
 
 const ProjectsTable = () => {
   const { projectsArray, headerArray, refetch } = useGetProjects();
@@ -63,8 +65,9 @@ const ProjectsTable = () => {
           {projectsArray.map((row: IProjectItem) => (
             <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell component="th" scope="row">
-                {row.id}
+                <Link to={`${row.id}`}>{row.id}</Link>
               </TableCell>
+
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>

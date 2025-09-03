@@ -7,6 +7,7 @@ import AuthPage from '../pages/authPage/AuthPage';
 import CalendarPage from '../pages/calendarPage/CalendarPage';
 import InvitesPage from '../pages/invitesPage/InvitesPage';
 import ProfilePage from '../pages/profilePage/ProfilePage';
+import ProjectPage from '../pages/projectPage/ProjectPage';
 import ProjectsPage from '../pages/projectsPage/ProjectsPage';
 import RegisterPage from '../pages/registerPage/RegisterPage';
 import StartPage from '../pages/startPage/StartPage';
@@ -26,13 +27,14 @@ function App() {
           <Routes>
             <Route path="/" element={<StartPage />} />
             <Route path="/tasks" element={<TasksPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="projects" element={<ProjectsPage />} />
             <Route path="/invites" element={<InvitesPage />} />
             <Route path="/calendar" element={<CalendarPage />} />
             <Route path="/users" element={<UsersPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/auth" element={<AuthPage />} />
+            <Route path="projects/:id" element={<ProjectPage />} />
           </Routes>
         </Layout>
       </ThemeProvider>
