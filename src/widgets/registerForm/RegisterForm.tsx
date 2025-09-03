@@ -1,36 +1,58 @@
 import { FormProvider, type SubmitHandler, useForm } from 'react-hook-form';
 
+import { useState } from 'react';
+
 import styled from '@emotion/styled';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, Checkbox, Divider, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 
 import TextInput from '../../features/textInput/TextInput';
+import { type FormFields, formSchema } from '../../shared/formSchema/formSchema';
 import type { IFormFields } from './types';
 
-const StyledBox = styled(Box)(() => ({
-  width: '100%',
-}));
-
-const StyledButton = styled(Button)(() => ({
-  borderRadius: '8px',
-  width: '100%',
-  height: '44px',
-  background: '#1886e5',
-}));
-
 const inputsArray = [
-  { title: 'Имя', name: 'firstName', placeholder: 'Введите ваше имя' },
-  { title: 'Фамилия', name: 'lastName', placeholder: 'Введите вашу фамилию' },
-  { title: 'Email', name: 'email', placeholder: 'example@mail.com' },
-  { title: 'Пароль', name: 'password', type: 'password' },
+  { title: 'Имя', name: 'firstName', placeholder: 'Введите ваше имя', alert: 'Некорректное имя' },
+  {
+    title: 'Фамилия',
+    name: 'lastName',
+    placeholder: 'Введите вашу фамилию',
+    alert: 'Некорректная фамилия',
+  },
+  { title: 'Email', name: 'email', placeholder: 'example@mail.com', alert: 'Некорректный Email' },
+  { title: 'Пароль', name: 'password', type: 'password', alert: 'Некорректный пароль' },
 ];
 
 const RegisterForm = () => {
-  const methods = useForm<IFormFields>({});
+  const [isChecked, setIsChecked] = useState<boolean>(false);
 
-  const onSubmit: SubmitHandler<IFormFields> = (data: IFormFields) => {
+  const methods = useForm<FormFields>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit: SubmitHandler<IFormFields> = async (data: IFormFields) => {
+    if (!isChecked) return;
     console.log(data);
+    await fetch('http://localhost:3000/users', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
   };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(event.target.checked);
+  };
+
+  const StyledBox = styled(Box)(() => ({
+    width: '100%',
+  }));
+
+  const StyledButton = styled(Button)(() => ({
+    borderRadius: '8px',
+    width: '100%',
+    height: '44px',
+    background: '#1886e5',
+  }));
 
   return (
     <Box component={'section'} sx={{ p: '10px', maxWidth: 580, mx: 'auto', boxShadow: 'none' }}>
@@ -58,12 +80,13 @@ const RegisterForm = () => {
                   name={item.name}
                   type={item.type}
                   placeholder={item.placeholder}
+                  alert={item.alert}
                 />
               );
             })}
 
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Checkbox />
+              <Checkbox checked={isChecked} onChange={handleChange} />
               <Typography>
                 Нажимая на кнопку «зарегистрироваться» вы соглашаетесь с Условиями использования и
                 Политикой конфиденциальности
@@ -71,7 +94,7 @@ const RegisterForm = () => {
             </Box>
 
             <StyledBox>
-              <StyledButton type="submit" variant="contained" size="large">
+              <StyledButton type="submit" variant="contained" size="large" disabled={!isChecked}>
                 <Typography
                   sx={{
                     textTransform: 'none',

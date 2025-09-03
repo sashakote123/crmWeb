@@ -7,7 +7,6 @@ import x from './assets/x.svg';
 
 const StyledForm = styled(TextField)(() => ({
   width: '100%',
-  //   height: '56px',
   border: 'none',
   borderRadius: '12px',
   borderBottom: '1px solid #c1c7cd',
@@ -25,14 +24,22 @@ const StyledTypography = styled(Typography)(() => ({
   lineHeight: '140%',
 }));
 
+const StyledAlertTypography = styled(Typography)(() => ({
+  marginTop: '8px',
+  fontSize: '14px',
+  lineHeight: '140%',
+  color: '#f34c41',
+}));
+
 interface Props {
   title: string;
   name: string;
   placeholder?: string;
   type?: string;
+  alert?: string;
 }
 
-const TextInput: React.FC<Props> = ({ title, name, placeholder, type }) => {
+const TextInput: React.FC<Props> = ({ title, name, placeholder, type, alert }) => {
   const {
     register,
     setValue,
@@ -40,18 +47,24 @@ const TextInput: React.FC<Props> = ({ title, name, placeholder, type }) => {
   } = useFormContext();
   console.log(errors);
   return (
-    <StyledBox sx={{ position: 'relative' }}>
-      <StyledTypography>
-        {title}
-        {errors.root ? <>Errro</> : null}
-      </StyledTypography>
-      <StyledForm {...register(name)} type={type ?? 'text'} name={name} placeholder={placeholder} />
-      <Button
-        onClick={() => setValue(name, '')}
-        sx={{ position: 'absolute', right: 0, bottom: '9px' }}
-      >
-        <img src={x} alt="x" />
-      </Button>
+    <StyledBox>
+      <StyledTypography>{title}</StyledTypography>
+      <Box sx={{ position: 'relative' }}>
+        <StyledForm
+          {...register(name)}
+          type={type ?? 'text'}
+          name={name}
+          placeholder={placeholder}
+        />
+        <Button
+          onClick={() => setValue(name, '')}
+          sx={{ position: 'absolute', right: 0, bottom: '9px' }}
+        >
+          <img src={x} alt="x" />
+        </Button>
+      </Box>
+
+      {errors[name] && <StyledAlertTypography>{alert}</StyledAlertTypography>}
     </StyledBox>
   );
 };

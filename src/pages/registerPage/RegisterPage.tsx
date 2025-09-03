@@ -29,9 +29,6 @@ const RegisterPage = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          '@media (max-width: 900px)': {
-            height: 'calc(100vh)',
-          },
         }}
       >
         <Box
@@ -45,7 +42,6 @@ const RegisterPage = () => {
             justifyContent: 'center',
             '@media (max-width: 900px)': {
               display: 'none',
-              height: 'calc(100vh)',
             },
           }}
         >
@@ -53,10 +49,10 @@ const RegisterPage = () => {
         </Box>
         <Box
           sx={{
+            height: '100%',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-end',
-            gap: '100px',
             padding: '51px 80px',
             '@media (max-width: 900px)': {
               padding: '30px 30px',
@@ -65,6 +61,7 @@ const RegisterPage = () => {
         >
           <Box
             sx={{
+              mb: 10,
               '@media (max-width: 900px)': {
                 display: 'none',
               },
@@ -74,7 +71,7 @@ const RegisterPage = () => {
           </Box>
 
           <RegisterForm />
-          <Typography sx={{ alignSelf: 'flex-start' }}>
+          <Typography sx={{ mt: 5, alignSelf: 'flex-start' }}>
             <Link to={'/auth'}>У вас уже есть учетная запись?</Link>
           </Typography>
         </Box>

@@ -17,7 +17,6 @@ const Layout = ({ children }: { children: ReactNode }) => {
             flexGrow: 1,
             p: 3,
             mt: '64px',
-            // width: `calc(100% - 86px)`,
             transition: 'width 0.3s ease',
             minHeight: 'calc(100vh - 56px)',
           }}
