@@ -144,6 +144,98 @@
       "password": "111111"
     }
   ],
+
+  "tasks": [
+    {
+      "name": "Разработать логотип",
+      "desc": "Разработать логотип для салона «Орхидея» ",
+      "status": "4",
+      "invitedMembers": "sasha@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "f6b5"
+    },
+
+    {
+      "name": "Разработать логотип",
+      "desc": "Разработать логотип для салона «Орхидея»",
+      "status": "0",
+      "invitedMembers": "sasha@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "f6b5"
+    },
+    {
+      "name": "Создать сайт-визитку",
+      "desc": "Разработать одностраничный сайт для салона красоты",
+      "status": "3",
+      "invitedMembers": "frontend@mail.com, designer@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "a8c2"
+    },
+    {
+      "name": "Написать текст для главной страницы",
+      "desc": "SEO-текст для продвижения услуг салона",
+      "status": "0",
+      "invitedMembers": "copywriter@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "d4e1"
+    },
+    {
+      "name": "Подобрать цветовую гамму",
+      "desc": "Разработать фирменную палитру для бренда",
+      "status": "2",
+      "invitedMembers": "designer@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "b3f7"
+    },
+    {
+      "name": "Зарегистрировать домен",
+      "desc": "Купить доменное имя orchid-salon.ru",
+      "status": "0",
+      "invitedMembers": "admin@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "e9g6"
+    },
+    {
+      "name": "Создать социальные сети",
+      "desc": "Зарегистрировать аккаунты в Instagram и VK",
+      "status": "2",
+      "invitedMembers": "smm@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "j5h8"
+    },
+    {
+      "name": "Разработать бриф для клиентов",
+      "desc": "Создать анкету для сбора информации о проекте",
+      "status": "4",
+      "invitedMembers": "manager@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "p3k9"
+    },
+    {
+      "name": "Подготовить презентацию услуг",
+      "desc": "Создать PDF-каталог с прайсом и описанием",
+      "status": "3",
+      "invitedMembers": "designer@mail.com, copywriter@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "r7m2"
+    },
+    {
+      "name": "Настроить почту",
+      "desc": "Создать корпоративные email-адреса",
+      "status": "3",
+      "invitedMembers": "tech@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "t4s6"
+    },
+    {
+      "name": "Разработать фирменный бланк",
+      "desc": "Создать шаблон для официальных документов",
+      "status": "5",
+      "invitedMembers": "designer@mail.com",
+      "author": "sapool@bk.ru",
+      "id": "u1v5"
+    }
+  ],
   "profile": {
     "name": "Александр",
     "lastname": "Котихин"
