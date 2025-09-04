@@ -16,7 +16,8 @@ import {
 } from '@mui/material';
 
 import type { RootState } from '../../app/store/store';
-import type { IFormFields, IProjectItem } from './types';
+import type { IProjectItem } from '../../shared/types';
+import type { IFormFields } from './types';
 
 interface Props {
   project: IProjectItem;

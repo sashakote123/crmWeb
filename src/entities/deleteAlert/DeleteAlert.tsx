@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Box, Button, Fade, Modal, Typography } from '@mui/material';
 
 import type { RootState } from '../../app/store/store';
-import type { IProjectItem } from './types';
+import type { IProjectItem } from '../../shared/types';
 
 interface Props {
   project: IProjectItem;

@@ -9,6 +9,7 @@ const StatusBlock: React.FC<Props> = ({ statusCode }) => {
     <Box
       sx={{
         padding: '5px 12px',
+        height: '28px',
         backgroundColor: `${statusCode === 0 ? 'rgba(0, 182, 155, 0.2)' : statusCode === 1 ? 'rgba(24, 134, 229, 0.2)' : 'rgba(243, 117, 13, 0.2)'}`,
         borderRadius: '4px',
         textAlign: 'center',
