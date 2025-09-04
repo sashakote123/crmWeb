@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { useState } from 'react';
 
 import {
+  Box,
   Button,
   Paper,
   Table,
@@ -20,14 +21,18 @@ import StatusBlock from '../../entities/statusBlock/StatusBlock';
 import type { IProjectItem } from '../../shared/types';
 import pencil from './assets/pencil.svg';
 import trash from './assets/trash.svg';
-import useGetProjects from './hooks/useGetProjects';
 
-const ProjectsTable = () => {
-  const { projectsArray, headerArray, refetch } = useGetProjects();
+interface Props {
+  array: IProjectItem[];
+  headerArray: string[];
+  refetch: () => Promise<void>;
+}
+
+const PageTable: React.FC<Props> = ({ array, headerArray, refetch }) => {
   const [editingProject, setEditingProject] = useState<IProjectItem | null>(null);
   const [deletingProject, setDeletingProject] = useState<IProjectItem | null>(null);
 
-  return !projectsArray.length ? (
+  return !array.length ? (
     <NoProjects />
   ) : (
     <TableContainer sx={{ borderRadius: '20px', p: 1 }} component={Paper}>
@@ -62,7 +67,7 @@ const ProjectsTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {projectsArray.map((row: IProjectItem) => (
+          {array.map((row: IProjectItem) => (
             <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell component="th" scope="row">
                 <Link to={`${row.id}`}>{row.id}</Link>
@@ -78,14 +83,14 @@ const ProjectsTable = () => {
                 <StatusBlock statusCode={row.status} />
               </TableCell>
               <TableCell sx={{ minWidth: '60px' }} align="left">
-                <Button onClick={() => setEditingProject(row)}>
-                  <img src={pencil} alt="pencil" />
-                </Button>
-              </TableCell>
-              <TableCell sx={{ minWidth: '60px' }} align="left">
-                <Button onClick={() => setDeletingProject(row)}>
-                  <img src={trash} alt="trash" />
-                </Button>
+                <Box display={'flex'} alignItems={'center'} gap={'10px'}>
+                  <Button sx={{ minWidth: 'auto', p: 1 }} onClick={() => setEditingProject(row)}>
+                    <img src={pencil} alt="pencil" />
+                  </Button>
+                  <Button sx={{ minWidth: 'auto', p: 1 }} onClick={() => setDeletingProject(row)}>
+                    <img src={trash} alt="trash" />
+                  </Button>
+                </Box>
               </TableCell>
             </TableRow>
           ))}
@@ -94,4 +99,4 @@ const ProjectsTable = () => {
     </TableContainer>
   );
 };
-export default ProjectsTable;
+export default PageTable;

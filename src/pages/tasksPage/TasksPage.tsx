@@ -1,13 +1,16 @@
 import { Box } from '@mui/material';
 
-import TasksTable from '../../features/tasksTable/TasksTable';
-import TasksPageHeader from '../../widgets/tasksPageHeader/TasksPageHeader';
+import PageTable from '../../entities/pageTable/PageTable';
+import PageHeader from '../../widgets/pageHeader/PageHeader';
+import useGetTasks from './hooks/useGetTasks';
 
 const TasksPage = () => {
+  const { tasksArray, headerArray, refetch } = useGetTasks();
+
   return (
     <Box component={'section'} sx={{ height: '100%' }}>
-      <TasksPageHeader />
-      <TasksTable />
+      <PageHeader title="Задачи" sorted />
+      <PageTable array={tasksArray} headerArray={headerArray} refetch={refetch} />
     </Box>
   );
 };
