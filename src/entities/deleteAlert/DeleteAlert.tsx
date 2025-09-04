@@ -3,21 +3,23 @@ import { useSelector } from 'react-redux';
 import { Box, Button, Fade, Modal, Typography } from '@mui/material';
 
 import type { RootState } from '../../app/store/store';
-import type { IProjectItem } from '../../shared/types';
+import type { IProjectItem, typeOfPage } from '../../shared/types';
 
 interface Props {
-  project: IProjectItem;
+  object: IProjectItem;
 
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   refetch: () => Promise<void>;
+
+  type: typeOfPage;
 }
 
-const DeleteAlert: React.FC<Props> = ({ project, isOpen, setIsOpen, refetch }) => {
+const DeleteAlert: React.FC<Props> = ({ object, isOpen, setIsOpen, refetch, type }) => {
   const theme = useSelector((store: RootState) => store.theme.theme);
 
   const onSubmit = async () => {
-    await fetch(`http://localhost:3000/projects/${project.id}`, {
+    await fetch(`http://localhost:3000/${type}/${object.id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

@@ -6,3 +6,5 @@ export interface IProjectItem {
   invitedMembers: string;
   author: string;
 }
+
+export type typeOfPage = 'projects' | 'tasks';

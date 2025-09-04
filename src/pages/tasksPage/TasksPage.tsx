@@ -9,8 +9,8 @@ const TasksPage = () => {
 
   return (
     <Box component={'section'} sx={{ height: '100%' }}>
-      <PageHeader title="Задачи" sorted />
-      <PageTable array={tasksArray} headerArray={headerArray} refetch={refetch} />
+      <PageHeader type="tasks" title="Задачи" sorted />
+      <PageTable type="tasks" array={tasksArray} headerArray={headerArray} refetch={refetch} />
     </Box>
   );
 };

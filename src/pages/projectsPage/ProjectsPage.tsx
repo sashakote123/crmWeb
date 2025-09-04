@@ -8,8 +8,13 @@ const ProjectsPage = () => {
   const { projectsArray, headerArray, refetch } = useGetProjects();
   return (
     <Box component={'section'} sx={{ height: '100%' }}>
-      <PageHeader title="Проекты" />
-      <PageTable array={projectsArray} headerArray={headerArray} refetch={refetch} />
+      <PageHeader type="projects" title="Проекты" />
+      <PageTable
+        type="projects"
+        array={projectsArray}
+        headerArray={headerArray}
+        refetch={refetch}
+      />
     </Box>
   );
 };

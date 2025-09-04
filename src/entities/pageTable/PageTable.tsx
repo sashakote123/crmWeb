@@ -18,38 +18,41 @@ import DeleteAlert from '../../entities/deleteAlert/DeleteAlert';
 import EditProjectForm from '../../entities/editProjectForm/EditProjectForm';
 import NoProjects from '../../entities/noProjects/NoProjects';
 import StatusBlock from '../../entities/statusBlock/StatusBlock';
-import type { IProjectItem } from '../../shared/types';
+import type { IProjectItem, typeOfPage } from '../../shared/types';
 import pencil from './assets/pencil.svg';
 import trash from './assets/trash.svg';
 
 interface Props {
   array: IProjectItem[];
+  type: typeOfPage;
   headerArray: string[];
   refetch: () => Promise<void>;
 }
 
-const PageTable: React.FC<Props> = ({ array, headerArray, refetch }) => {
-  const [editingProject, setEditingProject] = useState<IProjectItem | null>(null);
-  const [deletingProject, setDeletingProject] = useState<IProjectItem | null>(null);
+const PageTable: React.FC<Props> = ({ array, headerArray, refetch, type }) => {
+  const [editingObject, setEditingObject] = useState<IProjectItem | null>(null);
+  const [deletingObject, setDeletingObject] = useState<IProjectItem | null>(null);
 
   return !array.length ? (
     <NoProjects />
   ) : (
     <TableContainer sx={{ borderRadius: '20px', p: 1 }} component={Paper}>
-      {editingProject && (
+      {editingObject && (
         <EditProjectForm
-          project={editingProject}
-          isOpen={!!editingProject}
-          setIsOpen={() => setEditingProject(null)}
+          project={editingObject}
+          type={type}
+          isOpen={!!editingObject}
+          setIsOpen={() => setEditingObject(null)}
           refetch={refetch}
         />
       )}
 
-      {deletingProject && (
+      {deletingObject && (
         <DeleteAlert
-          project={deletingProject}
-          isOpen={!!deletingProject}
-          setIsOpen={() => setDeletingProject(null)}
+          object={deletingObject}
+          type={type}
+          isOpen={!!deletingObject}
+          setIsOpen={() => setDeletingObject(null)}
           refetch={refetch}
         />
       )}
@@ -84,10 +87,10 @@ const PageTable: React.FC<Props> = ({ array, headerArray, refetch }) => {
               </TableCell>
               <TableCell sx={{ minWidth: '60px' }} align="left">
                 <Box display={'flex'} alignItems={'center'} gap={'10px'}>
-                  <Button sx={{ minWidth: 'auto', p: 1 }} onClick={() => setEditingProject(row)}>
+                  <Button sx={{ minWidth: 'auto', p: 1 }} onClick={() => setEditingObject(row)}>
                     <img src={pencil} alt="pencil" />
                   </Button>
-                  <Button sx={{ minWidth: 'auto', p: 1 }} onClick={() => setDeletingProject(row)}>
+                  <Button sx={{ minWidth: 'auto', p: 1 }} onClick={() => setDeletingObject(row)}>
                     <img src={trash} alt="trash" />
                   </Button>
                 </Box>

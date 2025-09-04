@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
 
 import CreateProjectForm from '../../entities/createProjectForm/CreateProjectForm';
+import CreateTaskForm from '../../entities/createTaskForm/CreateTaskForm';
+import type { typeOfPage } from '../../shared/types';
 import cards from './assets/cards.svg';
 import list from './assets/list.svg';
 import man from './assets/man.svg';
@@ -11,14 +13,20 @@ import plus from './assets/plus.svg';
 interface Props {
   title: string;
   sorted?: boolean;
+  type: typeOfPage;
 }
 
-const PageHeader: React.FC<Props> = ({ title, sorted }) => {
+const PageHeader: React.FC<Props> = ({ title, sorted, type }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   return (
     <Box display={'flex'} justifyContent={'space-between'} mb={6}>
-      {isVisible && <CreateProjectForm isOpen={isVisible} setIsOpen={setIsVisible} />}
+      {isVisible &&
+        (type === 'projects' ? (
+          <CreateProjectForm isOpen={isVisible} setIsOpen={setIsVisible} />
+        ) : (
+          <CreateTaskForm isOpen={isVisible} setIsOpen={setIsVisible} />
+        ))}
 
       <Box display={'flex'} alignItems={'center'} gap={'67px'}>
         <Typography sx={{ fontSize: '32px' }} fontWeight={600}>

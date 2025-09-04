@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 
 import type { RootState } from '../../app/store/store';
-import type { IProjectItem } from '../../shared/types';
+import type { IProjectItem, typeOfPage } from '../../shared/types';
 import type { IFormFields } from './types';
 
 interface Props {
@@ -24,6 +24,7 @@ interface Props {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   refetch: () => Promise<void>;
+  type: typeOfPage;
 }
 
 const selectArray = [
@@ -32,7 +33,7 @@ const selectArray = [
   { status: 'Готово', value: 3 },
 ];
 
-const EditProjectForm: React.FC<Props> = ({ project, isOpen, setIsOpen, refetch }) => {
+const EditProjectForm: React.FC<Props> = ({ project, isOpen, setIsOpen, refetch, type }) => {
   const theme = useSelector((store: RootState) => store.theme.theme);
   const userEmail = useSelector((store: RootState) => store.user.email);
 
@@ -46,7 +47,7 @@ const EditProjectForm: React.FC<Props> = ({ project, isOpen, setIsOpen, refetch 
   }));
 
   const onSubmit: SubmitHandler<IFormFields> = async (data: IFormFields) => {
-    await fetch(`http://localhost:3000/projects/${project.id}`, {
+    await fetch(`http://localhost:3000/${type}/${project.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

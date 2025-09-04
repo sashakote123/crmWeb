@@ -3,15 +3,15 @@
     {
       "name": "Разработать логотипы",
       "desc": "Разрабатываем логотипы",
-      "status": "",
+      "status": "p1",
       "invitedMembers": "sasha@mail.com",
       "author": "sapool@bk.ru",
       "id": "f6b5"
     },
     {
-      "name": "Написать ТЗ!!!!",
+      "name": "Написать ТЗ",
       "desc": "Техническое задание для нового проекта",
-      "status": "",
+      "status": "p2",
       "invitedMembers": "project@mail.com, manager@mail.com",
       "author": "sapool@bk.ru",
       "id": "a8c2"
@@ -20,7 +20,7 @@
       "id": "d4e1",
       "name": "Сверстать главную страницу",
       "desc": "Адаптивная верстка по макету",
-      "status": 0,
+      "status": "p1",
       "invitedMembers": "frontend@mail.com",
       "author": "artem@example.com"
     },
@@ -28,7 +28,7 @@
       "id": "b3f7",
       "name": "Тестирование бета-версии",
       "desc": "Провести полное тестирование функционала",
-      "status": 3,
+      "status": "p1",
       "invitedMembers": "qa@mail.com, tester@mail.com",
       "author": "lead@company.ru"
     },
@@ -36,7 +36,7 @@
       "id": "e9g6",
       "name": "Деплой на продакшен",
       "desc": "Выкатить новую версию на рабочие серверы",
-      "status": 2,
+      "status": "p3",
       "invitedMembers": "devops@mail.com",
       "author": "cto@company.ru"
     },
@@ -44,7 +44,7 @@
       "id": "j5h8",
       "name": "Подготовить коммерческое предложение",
       "desc": "Для нового клиента по проекту X",
-      "status": 0,
+      "status": "p1",
       "invitedMembers": "sales@mail.com",
       "author": "sapool@bk.ru"
     },
@@ -52,7 +52,7 @@
       "id": "p3k9",
       "name": "Интегрировать платежную систему",
       "desc": "Подключить Stripe API к сайту",
-      "status": 1,
+      "status": "p2",
       "invitedMembers": "backend@mail.com",
       "author": "lead@company.ru"
     },
@@ -60,7 +60,7 @@
       "id": "r7m2",
       "name": "Написать контент для блога",
       "desc": "Статья о трендах веб-разработки",
-      "status": 2,
+      "status": "p3",
       "invitedMembers": "copywriter@mail.com",
       "author": "content@mail.ru"
     },
@@ -68,7 +68,7 @@
       "id": "t4s6",
       "name": "Выбрать хостинг для проекта",
       "desc": "Сравнить тарифы и выбрать лучший вариант",
-      "status": 0,
+      "status": "p1",
       "invitedMembers": "sysadmin@mail.com",
       "author": "cto@company.ru"
     },
@@ -76,7 +76,7 @@
       "id": "u1v5",
       "name": "Создать базу данных",
       "desc": "Спроектировать и развернуть схему БД",
-      "status": 1,
+      "status": "p2",
       "invitedMembers": "dba@mail.com",
       "author": "artem@example.com"
     },
@@ -84,7 +84,7 @@
       "id": "w8x0",
       "name": "Провести онбординг нового сотрудника",
       "desc": "Показать рабочие процессы и выдать доступы",
-      "status": 2,
+      "status": "p3",
       "invitedMembers": "hr@mail.com, teamlead@mail.com",
       "author": "sapool@bk.ru"
     },
@@ -92,7 +92,7 @@
       "id": "y2z4",
       "name": "Настроить CI/CD",
       "desc": "Настроить автоматическое тестирование и деплой",
-      "status": 0,
+      "status": "p1",
       "invitedMembers": "devops@mail.com",
       "author": "cto@company.ru"
     },
@@ -100,7 +100,7 @@
       "id": "c6b9",
       "name": "Закупить лицензии на ПО",
       "desc": "Оформить заявку на покупку софта",
-      "status": 1,
+      "status": "p2",
       "invitedMembers": "accountant@mail.com",
       "author": "lead@company.ru"
     },
@@ -108,7 +108,7 @@
       "id": "q0d7",
       "name": "Подготовить презентацию для инвесторов",
       "desc": "Слайды с финансовыми показателями и планами",
-      "status": 2,
+      "status": "p3",
       "invitedMembers": "ceo@company.com, analyst@mail.com",
       "author": "sapool@bk.ru"
     },
@@ -116,7 +116,7 @@
       "id": "l3n1",
       "name": "Рефакторинг старого кода",
       "desc": "Улучшение читаемости и производительности",
-      "status": 0,
+      "status": "p1",
       "invitedMembers": "senior@dev.com",
       "author": "techlead@mail.ru"
     }
@@ -144,21 +144,19 @@
       "password": "111111"
     }
   ],
-
   "tasks": [
     {
-      "name": "Разработать логотип",
+      "name": "Разработать логотип!!!!",
       "desc": "Разработать логотип для салона «Орхидея» ",
-      "status": "4",
+      "status": "t1",
       "invitedMembers": "sasha@mail.com",
       "author": "sapool@bk.ru",
       "id": "f6b35"
     },
-
     {
       "name": "Разработать логотип",
       "desc": "Разработать логотип для салона «Орхидея»",
-      "status": "0",
+      "status": "t1",
       "invitedMembers": "sasha@mail.com",
       "author": "sapool@bk.ru",
       "id": "f6b5"
@@ -166,7 +164,7 @@
     {
       "name": "Создать сайт-визитку",
       "desc": "Разработать одностраничный сайт для салона красоты",
-      "status": "3",
+      "status": "t2",
       "invitedMembers": "frontend@mail.com, designer@mail.com",
       "author": "sapool@bk.ru",
       "id": "a8c2"
@@ -174,7 +172,7 @@
     {
       "name": "Написать текст для главной страницы",
       "desc": "SEO-текст для продвижения услуг салона",
-      "status": "0",
+      "status": "t1",
       "invitedMembers": "copywriter@mail.com",
       "author": "sapool@bk.ru",
       "id": "d4e1"
@@ -182,7 +180,7 @@
     {
       "name": "Подобрать цветовую гамму",
       "desc": "Разработать фирменную палитру для бренда",
-      "status": "2",
+      "status": "t3",
       "invitedMembers": "designer@mail.com",
       "author": "sapool@bk.ru",
       "id": "b3f7"
@@ -190,7 +188,7 @@
     {
       "name": "Зарегистрировать домен",
       "desc": "Купить доменное имя orchid-salon.ru",
-      "status": "0",
+      "status": "t4",
       "invitedMembers": "admin@mail.com",
       "author": "sapool@bk.ru",
       "id": "e9g6"
@@ -198,7 +196,7 @@
     {
       "name": "Создать социальные сети",
       "desc": "Зарегистрировать аккаунты в Instagram и VK",
-      "status": "2",
+      "status": "t2",
       "invitedMembers": "smm@mail.com",
       "author": "sapool@bk.ru",
       "id": "j5h8"
@@ -206,7 +204,7 @@
     {
       "name": "Разработать бриф для клиентов",
       "desc": "Создать анкету для сбора информации о проекте",
-      "status": "4",
+      "status": "t4",
       "invitedMembers": "manager@mail.com",
       "author": "sapool@bk.ru",
       "id": "p3k9"
@@ -214,7 +212,7 @@
     {
       "name": "Подготовить презентацию услуг",
       "desc": "Создать PDF-каталог с прайсом и описанием",
-      "status": "3",
+      "status": "t5",
       "invitedMembers": "designer@mail.com, copywriter@mail.com",
       "author": "sapool@bk.ru",
       "id": "r7m2"
@@ -222,7 +220,7 @@
     {
       "name": "Настроить почту",
       "desc": "Создать корпоративные email-адреса",
-      "status": "3",
+      "status": "t2",
       "invitedMembers": "tech@mail.com",
       "author": "sapool@bk.ru",
       "id": "t4s6"
@@ -230,7 +228,7 @@
     {
       "name": "Разработать фирменный бланк",
       "desc": "Создать шаблон для официальных документов",
-      "status": "5",
+      "status": "t4",
       "invitedMembers": "designer@mail.com",
       "author": "sapool@bk.ru",
       "id": "u1v5"
